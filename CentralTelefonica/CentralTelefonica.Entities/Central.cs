@@ -8,8 +8,9 @@ namespace CentralTelefonica.Entities
 {
     public class Central
     {
-        List<Telefono> _Telefonos;
-        List<LLamada> _Llamadas;
+        public int CentralId { get; set; }
+        public List<Telefono> _Telefonos { get; set; }
+        public List<LLamada> _Llamadas;
 
         public Central()
         {
@@ -64,13 +65,15 @@ namespace CentralTelefonica.Entities
             var duración = new Reloj().GetTime() - llamada.Reloj.GetTime();
             var costollamada = duración * llamada.Tarifa();
 
-             _Llamadas.Remove(llamada);
+            _Llamadas.Remove(llamada);
 
-             Console.WriteLine("Finalizado llamada al [{0}]", numero);
-             Console.WriteLine("Costo de la llamada [s/{0}]", costollamada.ToString());
-             Console.WriteLine();
+            Console.WriteLine("Finalizado llamada al [{0}]", numero);
+            Console.WriteLine("Costo de la llamada [s/{0}]", costollamada.ToString());
+            Console.WriteLine();
 
             return costollamada;
+
         }
+
     }
 }

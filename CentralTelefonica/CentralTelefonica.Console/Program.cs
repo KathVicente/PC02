@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CentralTelefonica.Entities;
+using CentralTelefonica.Context;
 using System.Threading;
 
 namespace CentralTelefonica.Console
@@ -14,8 +15,8 @@ namespace CentralTelefonica.Console
         {
             var central = new Central();
 
-            var fono1 = "4659321";
-            var fono2 = "4653621";
+            var fono1 = "4653621";
+            var fono2 = "3485078";
 
             var fono3 = "999468925";
             var fono4 = "987542539";
@@ -28,7 +29,7 @@ namespace CentralTelefonica.Console
             central.Agregar(fono5);
 
             central.IniciarLlamada(fono1);
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
             central.FinalizarLlamada(fono1);
 
             central.IniciarLlamada(fono3);
@@ -46,8 +47,8 @@ namespace CentralTelefonica.Console
             central.IniciarLlamada(fono2);
             Thread.Sleep(3000);
             central.FinalizarLlamada(fono2);
-    
 
+            System.Console.ReadLine();
 
         }
     }

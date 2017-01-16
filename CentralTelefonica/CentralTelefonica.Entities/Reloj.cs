@@ -8,6 +8,10 @@ namespace CentralTelefonica.Entities
 {
     public class Reloj : Time
     {
+        private int _relojId;
+        public LLamada Llamada { get; set; }
+        public int LlamadaId { get; set; }
+        public int RelojId { get { return _relojId; } }
         public Reloj()
             :base()
         {
@@ -24,5 +28,7 @@ namespace CentralTelefonica.Entities
             base.GetTime(out horas, out minutos, out segundos);
             return horas * 3600 + minutos * 60 + segundos;
         }
+
+        
     }
 }
